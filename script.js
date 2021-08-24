@@ -53,3 +53,8 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+
+//eventlisteners for tastature keys:
+// f - fullscreen on/off
+// space - pause/play
+// m - muted/unmuted
