@@ -39,8 +39,8 @@ function scrub(e) {
 
 /* Hook up the event listeners */
 video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
+// video.addEventListener('play', updateButton);
+// video.addEventListener('pause', updateButton);
 video.addEventListener('timeupdate', handleProgress);
 
 toggle.addEventListener('click', togglePlay);

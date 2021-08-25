@@ -15,13 +15,26 @@
 	<div class="player">
 		<video class="player__video viewer" src="./assets/Video/video1.mp4" poster="./assets/Images/poster0.jpg"></video>
 		<div class="player__controls">
-			<button class="player__button toggle" title="Toggle Play">></button>
+			<!-- <button class="player__button toggle" title="Toggle Play">></button> -->
+			<div class="player__button toggle">
+        <img src="./assets/Images/VideoToggleBtn.svg"/>
+			</div>
 			<div class="progress">
 				<div class="progress__filled"></div>
 			</div>
-			<div class="volumeIcon">V</div>
+			<div class="volumeIcon">
+				<img src="./assets/Images/VolumeIcon1.svg" alt="">
+				<img src="./assets/Images/VolumeIcon2.svg" alt="">
+				<img src="./assets/Images/VolumeIcon3.svg" alt="">
+				<img src="./assets/Images/VolumeIcon4.svg" alt="">
+			</div>
 			<input type="range" name="volume" class="player__slider volumen_slider" min="0" max="1" step="0.05" value="1">
-			<div class="fullScreenIcon">F</div>
+			<div class="fullScreenIcon">
+				<img src="./assets/Images/FullScreenBtn1.svg" alt="">
+				<img src="./assets/Images/FullScreenBtn2.svg" alt="">
+				<img src="./assets/Images/FullScreenBtn3.svg" alt="">
+				<img src="./assets/Images/FullScreenBtn4.svg" alt="">
+			</div>
 			<input type="range" name="playbackRate" class="player__slider playback_slider" min="0.5" max="2" step="0.1" value="1">
 			<button data-skip="-10" class="player__button minus10Btn"><< 10s</button>
 			<button data-skip="25" class="player__button plus25Btn">25s >></button>
