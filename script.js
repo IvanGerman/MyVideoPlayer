@@ -79,6 +79,7 @@ document.addEventListener('keydown', function(event) {
   if ( event.code == 'Space' && video.paused ) {
     console.log('play');
     video.play();
+    return;
   };
 
   if ( event.code == 'Space' && !video.paused ) {
