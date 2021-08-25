@@ -1,11 +1,12 @@
-/* Get Our Elements */
-const player = document.querySelector('.player');
+const player = document.querySelector('.player-wrapper');
 const video = player.querySelector('.viewer');
-const progress = player.querySelector('.progress');
-const progressBar = player.querySelector('.progress__filled');
+const progress = player.querySelector('.play-progress');
+const progressBar = player.querySelector('.play-progress-filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player__slider');
+const ranges = player.querySelectorAll('.player-slider');
+
+//--------------------------------------------------------------------------------------------------------
 
 /* Build out functions */
 function togglePlay() {
