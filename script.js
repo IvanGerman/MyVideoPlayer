@@ -6,6 +6,8 @@ const toggleBtn = playerWrapper.querySelector('.toggle');
 const skipBtns = playerWrapper.querySelectorAll('[data-skip]');
 const sliders = playerWrapper.querySelectorAll('.player-slider');
 const toggleBtnImage = playerWrapper.querySelector('.toggleBtn');
+const volumenSlider = playerWrapper.querySelector('.volumen-slider');
+const playbackSlider = playerWrapper.querySelector('.playback-slider');
 
 //--------------------------------------------------------------------------------------------------------
 
@@ -76,15 +78,97 @@ playProgress.addEventListener('mouseup', () => mousedown = false);
 
 document.addEventListener('keydown', function(event) {
 
+  //Space Bar------------------------------------------
+
   if ( event.code == 'Space' && video.paused ) {
-    console.log('play');
     video.play();
     return;
   };
-
+  
   if ( event.code == 'Space' && !video.paused ) {
-    console.log('pause');
     video.pause();
   };
 
+  //Key M-----------------------------------------------
+  
+  if ( event.code == 'KeyM' ) {
+    if ( video.muted ) {
+      video.muted = false; return;
+    };
+    video.muted = true;
+  };
+  
+  //Key F-----------------------------------------------
+
+  if (event.code == 'KeyF') {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    } else {
+      video.requestFullscreen();
+    };
+  };
+
+  //Key > -----------------------------------------------
+
+  if (event.code == 'Period') {
+    if ( video.playbackRate > 1.9 ) { return; };
+    video.playbackRate += 0.1;
+  };
+
+  //Key < -----------------------------------------------
+
+  if (event.code == 'Comma') {
+    if ( video.playbackRate < 0.6 ) { return; };
+    video.playbackRate -= 0.1;
+  };
+
+
+  // Extra added functional keys:
+  // b - change background color
+  // j - skip 10 seconds forward
+  // l - skip 10 seconds back
+  // Home - skip to the start of video
+  // End - skip to the end of video
+  
+
+  //Key B -----------------------------------------------
+
+  if ( event.code == 'KeyB' ) { 
+
+    if ( document.body.style.backgroundColor == 'rgb(190, 180, 180)' ) {
+      document.body.style.backgroundColor = 'rgb(0, 0, 0)';
+      return;
+    };
+
+    document.body.style.backgroundColor = 'rgb(190, 180, 180)'; 
+  };
+
+  //Key J -----------------------------------------------
+   
+  if ( event.code == 'KeyJ' ) { 
+    
+    video.currentTime += 10;
+  };
+  
+  //Key L -----------------------------------------------
+   
+  if ( event.code == 'KeyL' ) { 
+    
+    video.currentTime -= 10;
+  };
+
+  //Key Home -----------------------------------------------
+   
+  if ( event.code == 'Home' ) { 
+    
+    video.currentTime = 0;
+    video.play();
+  };
+
+  //Key End -----------------------------------------------
+   
+  if ( event.code == 'End' ) { 
+    
+    video.currentTime = video.duration;
+  };
 });
